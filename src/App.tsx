@@ -374,13 +374,13 @@ export default function App() {
         <div className="max-w-7xl mx-auto px-4 md:px-8 flex flex-col md:flex-row items-center justify-between gap-4">
           
           <div className="flex items-center gap-3">
-            <div className="w-11 h-11 rounded-xl bg-emerald-500 flex items-center justify-center text-white shadow-emerald-200/50 shadow-lg">
+            <div className="w-11 h-11 rounded-xl bg-blue-600 flex items-center justify-center text-white shadow-blue-200/50 shadow-lg">
               <UtensilsCrossed className="w-6 h-6" />
             </div>
             <div>
               <div className="flex items-center gap-2">
                 <h1 className="font-display font-bold text-2xl tracking-tight text-slate-900">{t[lang].appTitle}</h1>
-                <span className="text-xs font-mono font-medium tracking-wide bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded-full uppercase">Gemini 3.5 Active</span>
+                <span className="text-xs font-mono font-medium tracking-wide bg-blue-100 text-blue-800 px-2 py-0.5 rounded-full uppercase">Gemini 3.5 Active</span>
               </div>
               <p className="text-xs text-slate-500 font-sans mt-0.5 font-medium">{t[lang].appSub}</p>
             </div>
@@ -392,7 +392,7 @@ export default function App() {
               onClick={handleLangToggle}
               className="flex items-center gap-2 bg-slate-100 hover:bg-slate-200 text-slate-700 hover:text-slate-900 font-sans font-medium text-xs rounded-lg px-4 py-2.5 transition-all border border-slate-200 active:scale-95"
             >
-              <Languages className="w-4 h-4 text-emerald-600 animate-pulse" />
+              <Languages className="w-4 h-4 text-blue-600 animate-pulse" />
               <span>{t[lang].langToggle}</span>
             </button>
           </div>
@@ -417,10 +417,10 @@ export default function App() {
           <section className="lg:col-span-7 flex flex-col gap-6" id="input-form-column">
             
             <div className="bg-white rounded-2xl border border-slate-200 p-6 shadow-xs relative overflow-hidden">
-              <div className="absolute top-0 left-0 right-0 h-1.5 bg-emerald-500" />
+              <div className="absolute top-0 left-0 right-0 h-1.5 bg-blue-600" />
               
               <h2 className="font-display text-lg font-bold text-slate-800 mb-6 flex items-center gap-2">
-                <Sparkles className="w-5 h-5 text-emerald-500" />
+                <Sparkles className="w-5 h-5 text-blue-500" />
                 <span>{lang === "zh" ? "今日膳食與水分日誌" : "Today's Intake Diary"}</span>
               </h2>
 
@@ -439,7 +439,7 @@ export default function App() {
                   value={inputs.breakfast}
                   onChange={(e) => setInputs(prev => ({ ...prev, breakfast: e.target.value }))}
                   placeholder={t[lang].breakfastPlaceholder}
-                  className="w-full text-sm font-sans bg-slate-50 border border-slate-200 rounded-xl p-3 text-slate-800 placeholder-slate-400/80 focus:bg-white focus:outline-hidden focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 transition-all font-light"
+                  className="w-full text-sm font-sans bg-slate-50 border border-slate-200 rounded-xl p-3 text-slate-800 placeholder-slate-400/80 focus:bg-white focus:outline-hidden focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all font-light"
                 />
               </div>
 
@@ -458,7 +458,7 @@ export default function App() {
                   value={inputs.lunch}
                   onChange={(e) => setInputs(prev => ({ ...prev, lunch: e.target.value }))}
                   placeholder={t[lang].lunchPlaceholder}
-                  className="w-full text-sm font-sans bg-slate-50 border border-slate-200 rounded-xl p-3 text-slate-800 placeholder-slate-400/80 focus:bg-white focus:outline-hidden focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 transition-all font-light"
+                  className="w-full text-sm font-sans bg-slate-50 border border-slate-200 rounded-xl p-3 text-slate-800 placeholder-slate-400/80 focus:bg-white focus:outline-hidden focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all font-light"
                 />
               </div>
 
@@ -477,7 +477,7 @@ export default function App() {
                   value={inputs.dinner}
                   onChange={(e) => setInputs(prev => ({ ...prev, dinner: e.target.value }))}
                   placeholder={t[lang].dinnerPlaceholder}
-                  className="w-full text-sm font-sans bg-slate-50 border border-slate-200 rounded-xl p-3 text-slate-800 placeholder-slate-400/80 focus:bg-white focus:outline-hidden focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 transition-all font-light"
+                  className="w-full text-sm font-sans bg-slate-50 border border-slate-200 rounded-xl p-3 text-slate-800 placeholder-slate-400/80 focus:bg-white focus:outline-hidden focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all font-light"
                 />
               </div>
 
@@ -496,7 +496,7 @@ export default function App() {
                   value={inputs.snacks}
                   onChange={(e) => setInputs(prev => ({ ...prev, snacks: e.target.value }))}
                   placeholder={t[lang].snacksPlaceholder}
-                  className="w-full text-sm font-sans bg-slate-50 border border-slate-200 rounded-xl p-3 text-slate-800 placeholder-slate-400/80 focus:bg-white focus:outline-hidden focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 transition-all font-light"
+                  className="w-full text-sm font-sans bg-slate-50 border border-slate-200 rounded-xl p-3 text-slate-800 placeholder-slate-400/80 focus:bg-white focus:outline-hidden focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all font-light"
                 />
               </div>
 
@@ -599,7 +599,7 @@ export default function App() {
                 id="btn-track-diet"
                 disabled={loading}
                 onClick={triggerHabitTracking}
-                className="w-full bg-emerald-600 hover:bg-emerald-700 active:bg-emerald-800 text-white font-display font-bold text-sm py-4 rounded-xl shadow-lg shadow-emerald-600/10 hover:shadow-emerald-600/20 active:translate-y-0.5 transition-all flex items-center justify-center gap-2.5 disabled:opacity-75 disabled:cursor-wait"
+                className="w-full bg-blue-600 hover:bg-blue-700 active:bg-blue-800 text-white font-display font-bold text-sm py-4 rounded-xl shadow-lg shadow-blue-600/10 hover:shadow-blue-600/20 active:translate-y-0.5 transition-all flex items-center justify-center gap-2.5 disabled:opacity-75 disabled:cursor-wait"
               >
                 {loading ? (
                   <>
@@ -611,7 +611,7 @@ export default function App() {
                   </>
                 ) : (
                   <>
-                    <Sparkles className="w-5 h-5 animate-pulse text-emerald-100" />
+                    <Sparkles className="w-5 h-5 animate-pulse text-blue-100" />
                     <span className="tracking-wide uppercase text-2xs md:text-xs">{t[lang].trackHabitBtn}</span>
                   </>
                 )}
@@ -621,7 +621,7 @@ export default function App() {
             {/* Quick Presets / Testing Panel */}
             <div className="bg-slate-100 rounded-2xl border border-slate-200 p-5 mt-2">
               <h3 className="font-display font-semibold text-xs text-slate-700 mb-1 flex items-center gap-1.5 uppercase tracking-wider">
-                <Lightbulb className="w-4 h-4 text-emerald-600" />
+                <Lightbulb className="w-4 h-4 text-blue-600" />
                 {t[lang].quickTemplatesTitle}
               </h3>
               <p className="text-3xs text-slate-505 mb-4 font-sans">{t[lang].quickTemplatesDesc}</p>
@@ -630,10 +630,10 @@ export default function App() {
                 <button
                   id="preset-balanced"
                   onClick={() => applyPresetScenario("balancedLowFat")}
-                  className="bg-white hover:bg-emerald-50 text-left border border-slate-200 hover:border-emerald-300 rounded-xl p-3 text-slate-800 transition-all active:scale-98 group flex flex-col justify-between"
+                  className="bg-white hover:bg-blue-50 text-left border border-slate-200 hover:border-blue-300 rounded-xl p-3 text-slate-800 transition-all active:scale-98 group flex flex-col justify-between"
                 >
-                  <span className="text-2xs font-bold text-emerald-600 group-hover:text-emerald-700 flex items-center gap-1 mb-1">
-                    <span className="w-1.5 h-1.5 bg-emerald-500 rounded-full" />
+                  <span className="text-2xs font-bold text-blue-650 group-hover:text-blue-700 flex items-center gap-1 mb-1">
+                    <span className="w-1.5 h-1.5 bg-blue-500 rounded-full" />
                     {t[lang].balancedLowFat}
                   </span>
                   <span className="text-3xs text-slate-500 line-clamp-1">Salmon, Veggies, Scrambled eggs</span>
@@ -692,13 +692,13 @@ export default function App() {
                   className="bg-white rounded-2xl border border-slate-200 p-6 shadow-xs relative overflow-hidden"
                 >
                   {/* Decorative rating marker background badge */}
-                  <div className="absolute top-0 right-0 py-1.5 px-3 bg-emerald-50 text-emerald-800 font-mono text-xs font-bold tracking-wider rounded-bl-xl border-l border-b border-emerald-100 flex items-center gap-1 shadow-2xs">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
+                  <div className="absolute top-0 right-0 py-1.5 px-3 bg-blue-50 text-blue-800 font-mono text-xs font-bold tracking-wider rounded-bl-xl border-l border-b border-blue-105 flex items-center gap-1 shadow-2xs">
+                    <CheckCircle2 className="w-3.5 h-3.5 text-blue-600" />
                     <span>{t[lang].todayTag}</span>
                   </div>
 
                   <h3 className="font-display font-bold text-slate-800 text-lg mb-6 border-b border-slate-100 pb-3 flex items-center gap-2">
-                    <Sparkles className="w-5 h-5 text-emerald-500 shrink-0" />
+                    <Sparkles className="w-5 h-5 text-blue-500 shrink-0" />
                     <span>{t[lang].ratingResultTitle}</span>
                   </h3>
 
@@ -758,7 +758,7 @@ export default function App() {
                   {/* Micro breakdown analysis grids */}
                   <div className="mb-6">
                     <h4 className="font-display font-semibold text-xs text-slate-700 tracking-wider uppercase mb-3 flex items-center gap-1.5">
-                      <TrendingUp className="w-4 h-4 text-emerald-600" />
+                      <TrendingUp className="w-4 h-4 text-blue-600" />
                       <span>{t[lang].habitsAdviceTitle}</span>
                     </h4>
 
@@ -821,16 +821,16 @@ export default function App() {
                   </div>
 
                   {/* 3 Step Recommendation Block */}
-                  <div className="bg-emerald-50/50 border border-emerald-100 rounded-xl p-4.5 mt-2">
-                    <h4 className="font-display font-semibold text-xs text-emerald-800 tracking-wider uppercase mb-3 flex items-center gap-1.5">
-                      <Lightbulb className="w-4 h-4 text-emerald-600 fill-emerald-100" />
+                  <div className="bg-blue-50/55 border border-blue-100 rounded-xl p-4.5 mt-2">
+                    <h4 className="font-display font-semibold text-xs text-blue-800 tracking-wider uppercase mb-3 flex items-center gap-1.5">
+                      <Lightbulb className="w-4 h-4 text-blue-600 fill-blue-100" />
                       <span>{t[lang].actionablePlan}</span>
                     </h4>
 
                     <ol className="flex flex-col gap-3 font-sans">
                       {(lang === "zh" ? analysisResult.adviceZh : analysisResult.adviceEn).map((advice, i) => (
                         <li key={i} className="flex gap-3 text-3xs text-slate-650 leading-relaxed">
-                          <span className="w-5 h-5 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center text-3xs font-bold shrink-0 font-mono">
+                          <span className="w-5 h-5 rounded-full bg-blue-100 text-blue-800 flex items-center justify-center text-3xs font-bold shrink-0 font-mono">
                             {i+1}
                           </span>
                           <span className="mt-0.5 font-medium">{advice}</span>
@@ -872,12 +872,12 @@ export default function App() {
         </div>
 
         {/* History / Trend Tracking Timeline Component */}
-        <section className="mt-12 bg-white rounded-2xl border border-slate-200 p-6 shadow-xs" id="history-logs-timeline">
+         <section className="mt-12 bg-white rounded-2xl border border-slate-200 p-6 shadow-xs" id="history-logs-timeline">
           
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 border-b border-slate-100 pb-5 mb-6">
             <div>
               <h2 className="font-display font-bold text-lg text-slate-900 flex items-center gap-2">
-                <Calendar className="w-5 h-5 text-emerald-500" />
+                <Calendar className="w-5 h-5 text-blue-500" />
                 <span>{t[lang].historySectionTitle}</span>
               </h2>
               <p className="text-xs text-slate-500 font-sans mt-0.5">{lang === "zh" ? "追蹤隨時間推移的營養評分趨勢與水合紀錄" : "Review your historic trend, water benchmarks, and average dietitian scorecard"}</p>
@@ -910,7 +910,7 @@ export default function App() {
                   <div 
                     key={entry.id} 
                     onClick={() => setAnalysisResult(entry)}
-                    className="bg-white rounded-lg p-3 text-center border border-slate-250 hover:border-emerald-300 transition-all cursor-pointer shadow-3xs hover:shadow-2xs flex flex-col justify-between items-center"
+                    className="bg-white rounded-lg p-3 text-center border border-slate-250 hover:border-blue-300 transition-all cursor-pointer shadow-3xs hover:shadow-2xs flex flex-col justify-between items-center"
                   >
                     <span className="text-4xs text-slate-400 font-mono font-medium truncate block w-full">{entry.date.replace(/,.*$/, "")}</span>
                     <div className="my-2">
