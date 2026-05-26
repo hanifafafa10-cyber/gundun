@@ -78,7 +78,16 @@ const t = {
     greetings: "Bountiful Health Starter",
     habitExcellent: "A highly balanced day! Keep up this lifestyle.",
     habitFair: "Good baseline. Some minor optimizations needed.",
-    habitPoor: "Needs attention. Try following the action plan below!"
+    habitPoor: "Needs attention. Try following the action plan below!",
+    scoreOf10: "of 10",
+    ratingDesc: "Synthesized based on fresh macros, hydration volume and ingredient profile.",
+    resultsTitle: "AI Consultation Status",
+    langToggle: "Switch to 中文",
+    waterUnit: "Liters",
+    breakfastPlaceholder: "What did you eat for breakfast? e.g. Oatmeal, eggs, coffee...",
+    lunchPlaceholder: "What did you eat for lunch? e.g. Chicken salad, wild rice...",
+    dinnerPlaceholder: "What did you eat for dinner? e.g. Baked salmon, broccoli...",
+    snacksPlaceholder: "Optional snacks or beverages? e.g. Almonds, apple, sweet tea..."
   },
   zh: {
     appTitle: "EcoBite 膳食習慣追蹤",
@@ -98,18 +107,18 @@ const t = {
     trackHabitBtn: "多維度追蹤評估飲食習慣",
     trackingStatus: "AI 營養顧問正在進行精細化分析...",
     ratingResultTitle: "AI 膳食臨床評估報告",
-    habitsRatingTitle: "全天飲食綜合營養評級",
-    habitsAdviceTitle: "代謝及營養分析指標",
-    hydrationHeading: "水分儲備 (Hydration)",
-    varietyHeading: "膳食多樣性 (Variety)",
-    proteinHeading: "蛋白質品質 (Protein)",
-    sugarHeading: "精緻成分與升糖 (Processed & Sugar)",
-    actionablePlan: "專屬 3 大循證營養方針",
-    historySectionTitle: "近期歷史飲食週誌",
-    noHistoryDesc: "本瀏覽器尚無追蹤紀錄。立即在上方手動輸入，或點擊下方「快速預設情境」一鍵帶入測試！",
-    clearLogs: "清除全體歷史存檔",
-    quickTemplatesTitle: "快速預設膳食模組",
-    quickTemplatesDesc: "點擊以下模組即可一鍵為四餐及水分自動填值，省去手動打字，方便快速測試 AI 雙語分析功能",
+    habitsRatingTitle: "全天飲食綜合營養評估",
+    habitsAdviceTitle: "膳食改善方針",
+    hydrationHeading: "水合狀態分析",
+    varietyHeading: "飲食多樣性",
+    proteinHeading: "蛋白質品質",
+    sugarHeading: "精緻非原生食物與升糖負荷",
+    actionablePlan: "專屬微調 3 步行動方案",
+    historySectionTitle: "近期每日飲食日誌",
+    noHistoryDesc: "本瀏覽器工作階段中暫無任何飲食日誌記錄。請在上方輸入您今日的膳食，或點選下方 mock 情境範本進行分析！",
+    clearLogs: "清除歷史飲食地圖",
+    quickTemplatesTitle: "快速 Mock 測試情境面版",
+    quickTemplatesDesc: "點擊可快速載入各類典型生活或臨床參考膳食，檢驗 AI 常量營養辨識與推薦調養系統的表現",
     balancedLowFat: "健康低脂運動員餐",
     sweetHighSugar: "高糖點心、手搖杯與炸雞餐",
     healthyVegan: "嚴格高纖全植物素食餐",
@@ -131,7 +140,16 @@ const t = {
     greetings: "健康飲食養成計劃",
     habitExcellent: "極佳的一天！您正在建造穩健的身體組織。",
     habitFair: "已達良好門檻。參考下方建議可以更上一層樓。",
-    habitPoor: "有待改善。建議遵循下方營養方針進行微調！"
+    habitPoor: "有待改善。建議遵循下方營養方針進行微調！",
+    scoreOf10: "分 (滿分10)",
+    ratingDesc: "綜合您今日的多采多樣食材、水合容量與精緻升糖來源進行專業膳食指標測算。",
+    resultsTitle: "AI 膳食評估等待中",
+    langToggle: "切換為 English",
+    waterUnit: "公升",
+    breakfastPlaceholder: "您早餐吃了什麼？例如：燕麥、水煮蛋、拿鐵...",
+    lunchPlaceholder: "您午餐吃了什麼？例如：雞肉溫沙拉、糙米飯、烤蔬菜...",
+    dinnerPlaceholder: "您晚餐吃了什麼？例如：烤香草鮭魚、清炒西蘭花...",
+    snacksPlaceholder: "有吃點心或零食嗎？例如：一小把杏仁、蘋果、無糖綠茶..."
   }
 };
 
@@ -524,8 +542,8 @@ export default function App() {
                     {inputs.water} L {inputs.water >= 2.0 ? "💧 ✅" : ""}
                   </span>
                   
-                  <span className="text-2xs font-mono text-slate-500 z-10 bg-white/75 border border-slate-100 px-1.5 py-0.5 rounded-sm">
-                    {inputs.water >= 3.0 ? (lang === "zh" ? "補水極其充足" : "Excellent Hydration") : `${Math.round(Math.min(100, (inputs.water / 3.0) * 100))}% Target`}
+                  <span className="text-2xs font-mono text-slate-500 z-10 bg-white/75 border border-slate-105 px-1.5 py-0.5 rounded-sm">
+                    {inputs.water >= 3.0 ? (lang === "zh" ? "補水極其充足" : "Excellent Hydration") : `${Math.round(Math.min(100, (inputs.water / 3.0) * 105))}% Target`}
                   </span>
                 </div>
 
@@ -544,7 +562,7 @@ export default function App() {
                     <button
                       id="water-add-bottle"
                       onClick={() => adjustWater(0.5)}
-                      className="bg-blue-50 hover:bg-blue-100 text-blue-700 border border-blue-200 rounded-lg text-3xs font-semibold px-2.5 py-1.5 transition-all text-center flex items-center gap-1 active:scale-95"
+                      className="bg-blue-50 hover:bg-blue-105 text-blue-700 border border-blue-200 rounded-lg text-3xs font-semibold px-2.5 py-1.5 transition-all text-center flex items-center gap-1 active:scale-95"
                     >
                       <Plus className="w-3 h-3" />
                       <span>{t[lang].waterBottle}</span>
@@ -606,7 +624,7 @@ export default function App() {
                 <Lightbulb className="w-4 h-4 text-emerald-600" />
                 {t[lang].quickTemplatesTitle}
               </h3>
-              <p className="text-3xs text-slate-500 mb-4 font-sans">{t[lang].quickTemplatesDesc}</p>
+              <p className="text-3xs text-slate-505 mb-4 font-sans">{t[lang].quickTemplatesDesc}</p>
 
               <div className="grid grid-cols-2 gap-2.5">
                 <button
@@ -654,7 +672,7 @@ export default function App() {
                     <span className="w-1.5 h-1.5 bg-indigo-500 rounded-full" />
                     {t[lang].skippedMeals}
                   </span>
-                  <span className="text-3xs text-slate-500 line-clamp-1">Skipped all meals, late night ramen</span>
+                  <span className="text-3xs text-slate-550 line-clamp-1">Skipped all meals, late night ramen</span>
                 </button>
               </div>
             </div>
@@ -828,7 +846,7 @@ export default function App() {
                   <div className="w-16 h-16 rounded-full bg-slate-100 flex items-center justify-center mb-4 text-slate-350 border border-slate-200">
                     <UtensilsCrossed className="w-7 h-7" />
                   </div>
-                  <h3 className="font-display font-bold text-slate-750 text-sm md:text-base mb-1">{t[lang].resultsTitle}</h3>
+                  <h3 className="font-display font-bold text-slate-755 text-sm md:text-base mb-1">{t[lang].resultsTitle}</h3>
                   <p className="text-3xs text-slate-400 max-w-sm mt-1.5 leading-relaxed">
                     {lang === "zh" 
                       ? "您在此輸入的膳食、垃圾食物與飲水量，將透過專用後端發送給臨床 AI。點擊「分析飲食習慣」後，即時在此處生成健康指標、營養雷達與調理方案。"
@@ -936,7 +954,7 @@ export default function App() {
                           </div>
 
                           {/* Quick Summary list of logged food */}
-                          <div className="text-3xs text-slate-500 mt-2 line-clamp-1">
+                          <div className="text-3xs text-slate-550 mt-2 line-clamp-1">
                             <strong className="text-slate-600 font-semibold">{t[lang].foodIntakeHeader} </strong>
                             {[
                               entry.breakfast && `🌅 [B] ${entry.breakfast}`,
@@ -989,7 +1007,7 @@ export default function App() {
           <p className="max-w-3xl mx-auto text-slate-500 leading-relaxed font-light mb-4">
             {t[lang].aboutAIFootnote}
           </p>
-          <div className="flex justify-center items-center gap-2 border-t border-slate-100 pt-5 text-slate-400 font-mono">
+          <div className="flex justify-center items-center gap-2 border-t border-slate-105 pt-5 text-slate-400 font-mono">
             <span>EcoBite Clean Eating Index</span>
             <span>•</span>
             <span>All Rights Localized</span>
