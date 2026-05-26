@@ -1,0 +1,8 @@
+{
+  "name": "Eating Habit Tracker",
+  "description": "An AI-powered eating habit and water consumption tracker with rating, habits review, personalized dietary advice, and Traditional Mandarin translation.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
